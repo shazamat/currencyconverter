@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
 }
 
 a {
@@ -10,8 +11,8 @@ a {
 }
 
 body {
-    font-weight: 500;
-    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
 }
 
 .container {
@@ -41,7 +42,15 @@ body {
 
 }
 
-.course__item-value {
+.top {
+    color: #01d201;
+}
+
+.bottom {
+    color: red;
+}
+
+.course-item-value {
     padding-top: 15px;
     font-size: 35px;
 }

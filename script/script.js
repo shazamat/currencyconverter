@@ -18,6 +18,42 @@ async function getCurrency() {
     const result = await data;
     console.log(result)
 
-    console.log(result.Valute.UZS.Value)
+    rates.USD = result.Valute.USD;
+    rates.EUR = result.Valute.EUR;
+    rates.GBP = result.Valute.GBP;
+    rates.UZS = result.Valute.UZS;
+
+    console.log(rates)
+
+    elementUSD.textContent = rates.USD.Value.toFixed(2);
+    elementEUR.textContent = rates.EUR.Value.toFixed(2);
+    elementGBP.textContent = rates.GBP.Value.toFixed(2);
+    elementUZS.textContent = rates.UZS.Value.toFixed(2);
+
+
+    if (rates.USD.Value >= rates.USD.Previous) {
+        elementUSD.classList.add('top')
+    } else {
+        elementUSD.classList.add('bottom')
+    }
+
+    if (rates.EUR.Value >= rates.EUR.Previous) {
+        elementEUR.classList.add('top')
+    } else {
+        elementEUR.classList.add('bottom')
+    }
+
+    if (rates.GBP.Value >= rates.GBP.Previous) {
+        elementGBP.classList.add('top')
+    } else {
+        elementGBP.classList.add('bottom')
+    }
+
+    if (rates.UZS.Value >= rates.UZS.Previous) {
+        elementUZS.classList.add('top')
+    } else {
+        elementUZS.classList.add('bottom')
+    }
+
 }
 
