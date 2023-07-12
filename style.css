@@ -10,19 +10,19 @@ a {
 }
 
 body {
-    font-weight: 800;
+    font-weight: 500;
     font-family: 'Inter', sans-serif;
 }
 
 .container {
-    width: 800px;
-    height: 400px;
+    height: 450px;
     margin-left: 350px;
     margin-top: 50px;
     border: 2px solid black;
 }
 
 .title {
+    font-weight: 500;
     margin: 20px 20px;
 }
 
