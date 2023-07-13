@@ -3,15 +3,15 @@ const elementUSD = document.querySelector('[data-value="USD"]');
 const elementEUR = document.querySelector('[data-value="EUR"]');
 const elementGBP = document.querySelector('[data-value="GBP"]');
 const elementUZS = document.querySelector('[data-value="UZS"]');
+const actualDate = document.querySelector('.date_class')
+const input = document.querySelector('#input');
+const result = document.querySelector('#result');
+const select = document.querySelector('#select');
 
+getCurrency();
 
-// fetch("https://www.cbr-xml-daily.ru/daily_json.js").then(function (result) {
-//     return result.json()
-// }).then(function (data) {
-//     console.log(data)
-// })
+setInterval(getCurrency, 20000);
 
-getCurrency()
 async function getCurrency() {
     const response = await fetch("https://www.cbr-xml-daily.ru/daily_json.js");
     const data = await response.json();
@@ -23,8 +23,7 @@ async function getCurrency() {
     rates.GBP = result.Valute.GBP;
     rates.UZS = result.Valute.UZS;
 
-    console.log(rates)
-
+    actualDate.textContent = result.Date;
     elementUSD.textContent = rates.USD.Value.toFixed(2);
     elementEUR.textContent = rates.EUR.Value.toFixed(2);
     elementGBP.textContent = rates.GBP.Value.toFixed(2);
@@ -57,3 +56,10 @@ async function getCurrency() {
 
 }
 
+
+input.oninput = convertValue;
+select.oninput = convertValue;
+
+function convertValue() {
+    return result.value = (parseFloat(input.value) / rates[select.value].Value).toFixed(2);
+}
