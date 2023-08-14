@@ -80,7 +80,38 @@ footer {
 /* For Tablet */
 @media screen and (min-device-width: 768px)
 and (max-device-width: 1024px) {
+    .container {
+        height: 1000px;
+        margin: 5px;
+        border: 2px solid black;
+        border-radius: 8px;
+    }
 
+    .courses {
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .course-item {
+        width: 250px;
+        height: 150px;
+        padding: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
+        border: 2px solid black;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .title {
+        font-weight: 500;
+        margin: 20px 20px;
+        font-size: 24px;
+    }
 }
 
 /* For Mobile Portrait */
@@ -120,8 +151,7 @@ and (max-device-width: 1024px) {
 }
 
 /* For Mobile Landscape  */
-@media screen and (max-device-width: 640px)
-and (orientation: landscape) {
+@media screen and (max-device-width: 640px) {
 
 }
 
